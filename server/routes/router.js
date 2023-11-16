@@ -4,8 +4,9 @@ const {
   createQuestions,
   getQuestions,
   updateQuestions,
-  deleteQuestions, 
-  addTestCases} = require('../controllers/controller');
+  deleteQuestions,
+  addTestCases
+} = require('../controllers/controller');
 
 router.route('/')
   .post(createQuestions)
@@ -13,7 +14,7 @@ router.route('/')
   .put(updateQuestions)
   .delete(deleteQuestions);
 
-router.route('/addTestCases')
-  .post(addTestCases);
+router.route('/testcase')
+  .post(addTestCases)
 
 module.exports = router;

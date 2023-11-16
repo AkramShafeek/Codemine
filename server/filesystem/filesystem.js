@@ -67,6 +67,19 @@ Filesystem.prototype.renameFile = async function (oldPath, newPath) {
   }
 }
 
+// returns the file names of all files matching with the given pattern
+Filesystem.prototype.getMatchingFiles = async function (path, pattern) {
+  try {
+    const files = await fsPromises.readdir(`${rootPath}/${path}`);
+    const matchingFiles = files.filter(file => file.match(pattern));
+    return matchingFiles;
+  } catch (error) {
+    console.error(`Got an error trying to read the dir: ${error.message}`);
+    throw error;
+  }
+}
+
+// returns the count of all file names matching with the given pattern
 Filesystem.prototype.getMatchingFilesCount = async function (path, pattern) {
   try {
     const files = await fsPromises.readdir(`${rootPath}/${path}`);
@@ -77,17 +90,6 @@ Filesystem.prototype.getMatchingFilesCount = async function (path, pattern) {
         count++;
 
     return count;
-  } catch (error) {
-    console.error(`Got an error trying to read the dir: ${error.message}`);
-    throw error;
-  }
-}
-
-Filesystem.prototype.getMatchingFiles = async function (path, pattern) {
-  try {
-    const files = await fsPromises.readdir(`${rootPath}/${path}`);
-    const matchingFiles = files.filter(file => file.match(pattern));
-    return matchingFiles;
   } catch (error) {
     console.error(`Got an error trying to read the dir: ${error.message}`);
     throw error;
