@@ -1,10 +1,10 @@
 import { Button } from "@material-tailwind/react"
+import { NavbarSimple } from "./components/Navbar/Navbar"
 
 function App() { 
   return (
     <>
-      <h1 className="text-xl font-bold text-red-500">Hello World</h1>
-      <Button>button</Button>
+      <NavbarSimple />
     </>
   )
 }
