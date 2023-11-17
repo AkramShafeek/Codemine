@@ -1,0 +1,13 @@
+[
+  {
+    "title": "Two sum",
+    "desc": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.You may assume that each input would have exactly one solution, and you may not use the same element twice.You can return the answer in any order.",
+    "constraints": "2 <= nums.length <= 10^4\n-10^9 <= nums[i] <= 10^9\n-10^9 <= target <= 10^9\n",
+    "testCases": [
+      "4\n1 2 3 4",
+      "6\n1 5 3 3 6 3",
+      "9\n1 2 3 4 5 6 23 3 5",
+      "3\n78 23 45"
+    ]
+  }
+]

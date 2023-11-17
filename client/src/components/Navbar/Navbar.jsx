@@ -10,7 +10,7 @@ import NavItem from "./NavItem";
 function NavList() {
   return (
     <ul className="my-2 flex gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      {navItems.map((item) => (<li><NavItem navItem={item} /></li>))}
+      {navItems.map((item) => (<li key={item.name}><NavItem navItem={item} /></li>))}
     </ul>
   );
 }
@@ -18,22 +18,20 @@ function NavList() {
 export function NavbarSimple() {
 
   return (
-    <div className="w-full p-2">
-      <Navbar className="w-full px-6 py-3 max-w-none" color="">
-        <div className="flex items-center justify-between text-blue-gray-900">
-          <Typography
-            as="a"
-            href="#"
-            variant="h6"
-            className="mr-4 cursor-pointer py-1.5"
-          >
-            CodeKraft
-          </Typography>
-          <div className="flex flex-row lg:block">
-            <NavList />
-          </div>
+    <Navbar className="w-full px-6 py-3 max-w-none mb-5">
+      <div className="flex items-center justify-between text-blue-gray-900">
+        <Typography
+          as="a"
+          href="#"
+          variant="h6"
+          className="mr-4 cursor-pointer py-1.5"
+        >
+          CodeKraft
+        </Typography>
+        <div className="flex flex-row lg:block">
+          <NavList />
         </div>
-      </Navbar>
-    </div>
+      </div>
+    </Navbar>
   );
 }
