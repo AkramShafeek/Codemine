@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
+import QuestionAccordion from './QuestionAccordion'
 
 const QuestionList = ({ questionList }) => {
+  const [openedQuestion, setOpenedQuestion] = useState("");
   return (
     <ul>
       {
         questionList.map((question) => (
           <li key={question.title}>
-            Title: {question.title} <br />
-            Desc: {question.desc}
+            <QuestionAccordion
+              question={question}
+              openedQuestion={openedQuestion}
+              handleClick={setOpenedQuestion}
+              isOpen={openedQuestion === question.title} />
           </li>
         ))
       }

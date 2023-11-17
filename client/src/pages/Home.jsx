@@ -24,8 +24,8 @@ const Home = () => {
   }, [questions]);
 
   return (
-    <div className="flex flex-col gap-2">
-      <h1>Your Questions</h1>
+    <div className="flex flex-col gap-2 p-4">
+      <h1 className="text-lg text-blue-gray-900 font-bold mb-3">Your Questions</h1>
       <QuestionList questionList={questions} />
     </div>
   )
